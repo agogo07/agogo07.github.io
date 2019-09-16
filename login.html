@@ -17,7 +17,7 @@
 <label for="password">Password:</label>
 <input type="password" id="password" name="password">
 <div id="lower">
-<div class="fb-login-button" data-width="" data-size="medium" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
+<div class="fb-login-button" data-width="" data-size="medium" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="true"></div>
 </div><!--/ lower-->
 <div class="g-signin2" data-onsuccess="onSignIn"></div>
 <script>
@@ -37,7 +37,8 @@
       }
 	  
     </script>
-	
+
+<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>	
 <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -62,9 +63,17 @@
    FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
 });
+
+	
+
    
 </script>
 
+
+
+
+<div id="status">
+</div>
 
 
 </form>
