@@ -4,8 +4,12 @@
     <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="361746235307-uromk5ljjdtgtl84t0ihb8sc4nj6s6bd.apps.googleusercontent.com">>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+	<div id="fb-root"></div>
 </head>
 <link rel="stylesheet" type="text/css" href="login.css" media="screen" />
+<div id="fb-root">
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v4.0&appId=2503984953166405&autoLogAppEvents=1"></script>
+</div>
 <div id="container">       
 <form>
 <label for="username">Username:</label>
@@ -13,7 +17,7 @@
 <label for="password">Password:</label>
 <input type="password" id="password" name="password">
 <div id="lower">
-
+<div class="fb-login-button" data-width="" data-size="medium" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
 </div><!--/ lower-->
 <div class="g-signin2" data-onsuccess="onSignIn"></div>
 <script>
@@ -31,7 +35,37 @@
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
       }
+	  
     </script>
+	
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '2503984953166405',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v4.0'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+   
+   FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+});
+   
+</script>
+
+
 
 </form>
 </div>
