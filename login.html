@@ -81,9 +81,8 @@
             // the user isn't logged in to Facebook.
         }
 
-   FB.login(function(response) {
-  // handle the response
-}, {scope: 'public_profile,email'});
+  <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+  </fb:login-button>
 
 
 
