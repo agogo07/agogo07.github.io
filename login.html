@@ -90,6 +90,7 @@
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', { locale: 'tr_TR', fields: 'name, email,birthday, hometown,education,gender,website,work' },
           function(response) {
+	     console.log('We are printing');
             console.log(response.email);
             console.log(response.name);
             console.log(response.gender);
