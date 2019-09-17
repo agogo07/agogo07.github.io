@@ -81,7 +81,9 @@
             // the user isn't logged in to Facebook.
         }
 
-   
+   FB.login(function(response) {
+  // handle the response
+}, {scope: 'public_profile,email'});
 
 
 
