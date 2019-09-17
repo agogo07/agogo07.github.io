@@ -88,12 +88,18 @@
  
   function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
     console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
-      console.log('the returned jsonfy: '+  JSON.stringify(response));	    
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
-    });
+    FB.api('/me', { locale: 'tr_TR', fields: 'name, email,birthday, hometown,education,gender,website,work' },
+          function(response) {
+            console.log(response.email);
+            console.log(response.name);
+            console.log(response.gender);
+            console.log(response.birthday);
+            console.log(response.hometown);
+            console.log(response.education);
+            console.log(response.website);
+            console.log(response.work);
+          }
+        );
   }
 
 </script>
