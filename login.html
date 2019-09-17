@@ -6,6 +6,7 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 	<div id="fb-root"></div>
 </head>
+<link rel="stylesheet" type="text/css" href="login.css" media="screen" />
 <div id="fb-root">
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v4.0&appId=2503984953166405&autoLogAppEvents=1"></script>
 </div>
@@ -59,21 +60,34 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
    
-   FB.getLoginStatus(function(response) {
-    if (response.status === 'connected') {
+   //FB.getLoginStatus(function(response) {
+    //if (response.status === 'connected') {
             // the user is logged in and has authenticated your
             // app, and response.authResponse supplies
             // the user's ID, a valid access token, a signed
             // request, and the time the access token
             // and signed request each expire
-            var uid = response.authResponse.userID;
-            var accessToken = response.authResponse.accessToken;
-        } else if (response.status === 'not_authorized') {
+      //      var uid = response.authResponse.userID;
+        //    var accessToken = response.authResponse.accessToken;
+        //} else if (response.status === 'not_authorized') {
             // the user is logged in to Facebook,
             // but has not authenticated your app
-        } else {
+        //} else {
             // the user isn't logged in to Facebook.
-        }
+        //}
 });
 
 	
+
+   
+</script>
+
+
+
+
+<div id="status">
+</div>
+
+
+</form>
+</div>
